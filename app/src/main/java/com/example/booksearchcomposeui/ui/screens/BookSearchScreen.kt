@@ -32,7 +32,7 @@ fun BookSearchScreen(
 ) {
     val state = viewModel.uiState
     val onValueChange = { v: String -> viewModel.onSearchQueryChanged(query = v) }
-    val onBookClick = { book: Book -> }
+    val onBookClick = { book: Book -> navController.navigate("book_details/${book.id}") }
 
     BookSearchContent(state = state, onValueChange = onValueChange, onBookClicked = onBookClick)
 }
